@@ -1,0 +1,32 @@
+<h2>Carrito de Compras</h2>
+<button (click)="irAProductos()">Volver a Productos</button>
+
+<div *ngIf="carrito.length > 0">
+    <ul>
+        <li *ngFor="let producto of carrito; let i = index" class="carrito-item">
+            <img [src]="producto.imagen" alt="Imagen del producto" class="carrito-item-img">
+            <div class="carrito-item-details">
+                <h3>{{ producto.nombre }}</h3>
+                <p>Precio: ${{ producto.precio }}</p>
+                <p>Descripción: {{ producto.descripcion }}</p>
+                <div class="cantidad-controles">
+                    <button (click)="disminuirCantidad(producto)">-</button>
+                    <span>{{ producto.cantidad }}</span>
+                    <button (click)="aumentarCantidad(producto)">+</button>
+                </div>
+            </div>
+            <button (click)="eliminarProducto(producto)" class="btn-eliminar">Eliminar</button>
+        </li>
+    </ul>
+
+    <!-- Botón de PayPal -->
+    <div id="paypal-button-container"></div>
+
+    <!-- <button (click)="generarXML()" class="carro-button">
+        Descargar Carrito
+    </button>-->
+</div>
+
+<p *ngIf="carrito.length === 0">
+    El carrito está vacío
+</p>

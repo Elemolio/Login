@@ -1,0 +1,106 @@
+/* ======= ESTILOS GENERALES ======= */
+body {
+    background-color: #807b7b;  
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ======= ESTILOS GENERALES DEL CARRITO ======= */
+.carrito-container {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ======= LISTA DE ELEMENTOS EN EL CARRITO ======= */
+.carrito-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Contenedor de cada producto en el carrito */
+.carrito-item {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto en la misma línea */
+    padding: 6px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    max-width: 400px; /* Reduce el ancho del contenedor */
+    gap: 6px; /* Espaciado más pequeño */
+}
+
+/* Imagen del producto en el carrito (Reducción máxima) */
+.carrito-item-img {
+    width: 25px;  /* Imagen más pequeña */
+    height: 25px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0; /* Evita que la imagen se deforme */
+}
+
+/* Nombre y precio alineados a la izquierda */
+.carrito-item-details {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 12px; /* Reduce aún más el tamaño del texto */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botón eliminar alineado a la derecha */
+.carrito-item button {
+    background-color: #dc3545;
+    color: white;
+    padding: 4px 8px; /* Botón más compacto */
+    border: none;
+    border-radius: 3px;
+    font-size: 10px; /* Botón más pequeño */
+    cursor: pointer;
+}
+
+.carrito-item button:hover {
+    background-color: #c82333;
+}
+
+/* ======= BOTÓN PAGAR ======= */
+.carrito-pagar {
+    background-color: #ff6347;
+    padding: 10px 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carrito-pagar:hover {
+    background-color: #ff4500;
+}
+
+/* ======= ESTILO CUANDO EL CARRITO ESTÁ VACÍO ======= */
+.carrito-vacio {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    margin-top: 15px;
+}

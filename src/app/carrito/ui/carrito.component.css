@@ -1,0 +1,96 @@
+/* Contenedor principal del carrito */
+.cart-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Cada ítem del carrito alineado a la izquierda */
+.cart-item, .carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    width: 500px; /* ancho fijo para alinearlo mejor */
+}
+
+/* Imagen más pequeña */
+.cart-item img, .carrito-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 6px;
+}
+
+/* Detalles del producto */
+.carrito-item-details {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Botones de cantidad */
+.cantidad-controles {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.cantidad-controles button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cantidad-controles button:hover {
+    background-color: #0056b3;
+}
+
+/* Botón eliminar a la derecha dentro del card */
+.btn-eliminar {
+    background-color: #dc3545;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Botón "Descargar Carrito" alineado a la izquierda */
+.carro-button {
+    background-color: #ff6347;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    width: auto;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.carro-button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}

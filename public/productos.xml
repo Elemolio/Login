@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario>
+    <producto>
+        <id>1</id>
+        <nombre>Guitarra Electrica</nombre>
+        <descripcion>Guitarra Electrica de buena calidad con cambio de cuerdas</descripcion>
+        <precio>1500.00</precio>
+        <cantidad>10</cantidad>
+        <imagen>https://imgs.search.brave.com/2pkNVJ8sj-a3rk85Sh9foL0IqMFdcdDa7-VTp2jdrU8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF84/Nzc4ODYtTUxNNDIz/MTQ3NzcyMTBfMDYy/MDIwLVcud2VicA</imagen>
+    </producto>
+    <producto>
+        <id>2</id>
+        <nombre>Tambor</nombre>
+        <descripcion>Tambor especializado para baterias u orquetas</descripcion>
+        <precio>1000.00</precio>
+        <cantidad>5</cantidad>
+        <imagen>https://imgs.search.brave.com/6Hi6W0hVqyiAqbK7di6A0z3_t0c7p23ozNIQzAmA9VU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vaW1hZ2Vz/LWV1LnNzbC1pbWFn/ZXMtYW1hem9uLmNv/bS9pbWFnZXMvSS80/MTNQaTNvb1hNTC5q/cGc_dz04MDAmc3Ns/PTE</imagen>
+    </producto>
+    <producto>
+        <id>3</id>
+        <nombre>Violin</nombre>
+        <descripcion>Violin pequeño ideal para viajes</descripcion>
+        <precio>700.00</precio>
+        <cantidad>15</cantidad>
+        <imagen>https://imgs.search.brave.com/V2JetSVUu8GREbqW_XppMW0p44RJx5bBHKIsBOuEiqs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTU1/MTM4ODYxL3Bob3Rv/L2dyYW5kLXBpYW5v/LWZyb20tYWJvdmUt/YWdhaW5zdC13aGl0/ZS1iYWNrZ3JvdW5k/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1uMGlBdGhzdXhR/NVBGTUtWNGZCWUdz/dXdiWnY4OUpKT24t/Y3pSVEZkdFc0PQ</imagen>
+    </producto>
+    <producto>
+        <id>4</id>
+        <nombre>Piano</nombre>
+        <descripcion>Piano de 73 teclas</descripcion>
+        <precio>2500.00</precio>
+        <cantidad>20</cantidad>
+        <imagen>https://imgs.search.brave.com/xT_BZnF4bMTAYVY7EjAgvl3P5JKAoM6YwLUeMXTOMmc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvQkM0/OTkwLTAwMS9waG90/by92aW9saW4uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTM5/WEIzUGJOOGNYVXo0/ZjZVa3gyQUFjOFBL/Rll4d3E0Mm9mNk1n/Y0RuSnM9</imagen>
+    </producto>
+    <producto>
+        <id>5</id>
+        <nombre>Violin grande</nombre>
+        <descripcion>Violin grande ideal para tenerlo en la casa</descripcion>
+        <precio>1300.00</precio>
+        <cantidad>8</cantidad>
+        <imagen>https://imgs.search.brave.com/LVYKFC5n0JZCb15cwzVZjWb9b6Hru1l7MoXdu6giyIk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYW1w/b3NtdXNpY3VzYS5j/b20vY2RuL3Nob3Av/ZmlsZXMvMzExQTQx/NjQuanBnP3Y9MTY5/NjIzNDIzMCZ3aWR0/aD01MzM</imagen>
+    </producto>
+    <producto>
+        <id>5</id>
+        <nombre>Saxofon</nombre>
+        <descripcion>Violin grande ideal para tenerlo en la casa</descripcion>
+        <precio>5.00</precio>
+        <cantidad>10</cantidad>
+        <imagen>https://imgs.search.brave.com/G6lLJRj-EAm-wDK8KnRmzSroEpz1m5W7o1GO5LtJf_0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tdXNp/Y2FsZXN5YWVlLmNv/bS9iYWNrZW5kL3Zp/c3Rhcy9pbWcvcHJv/ZHVjdG9zL3Ryb21w/ZXRhLXByb2Zlc2lv/bmFsLXlhbWFoYS15/dHI2MzM1cy5qcGc</imagen>
+    </producto>
+</inventario>

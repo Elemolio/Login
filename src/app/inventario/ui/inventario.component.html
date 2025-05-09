@@ -1,0 +1,41 @@
+<h2>Gestión de Inventario</h2>
+<button (click)="irAProductos()">Volver a Productos</button>
+
+<!-- Lista de productos en inventario -->
+<div class="productos">
+  <div *ngFor="let producto of productos" class="producto">
+    <img [src]="producto.imagen" alt="Imagen de producto">
+    <h3>{{ producto.nombre }}</h3>
+    <p>Precio: ${{ producto.precio }}</p>
+    <p>Descripción: {{ producto.descripcion }}</p>
+    <p>Cantidad: {{ producto.cantidad }}</p>
+    <button (click)="seleccionarProducto(producto)">Editar</button>
+    <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+  </div>
+</div>
+
+<!-- Formulario para agregar productos (abajo de la lista) -->
+<div class="form">
+  <h3>Agregar Nuevo Producto</h3>
+  <input type="text" [(ngModel)]="nuevoProducto.nombre" placeholder="Nombre del producto">
+  <input type="number" [(ngModel)]="nuevoProducto.precio" placeholder="Precio">
+  <input type="text" [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripción">
+  <input type="number" [(ngModel)]="nuevoProducto.cantidad" placeholder="Cantidad">
+  <input type="text" [(ngModel)]="nuevoProducto.imagen" placeholder="URL de imagen">
+  <button (click)="agregarProducto()">Agregar Producto</button>
+</div>
+
+<!-- Formulario de edición (opcional si está activo) -->
+<div *ngIf="modoEdicion && productoSeleccionado" class="form">
+  <h3>Editar Producto</h3>
+  <input type="text" [(ngModel)]="productoSeleccionado.nombre" placeholder="Nombre del producto">
+  <input type="number" [(ngModel)]="productoSeleccionado.precio" placeholder="Precio">
+  <input type="text" [(ngModel)]="productoSeleccionado.descripcion" placeholder="Descripción">
+  <input type="number" [(ngModel)]="productoSeleccionado.cantidad" placeholder="Cantidad">
+  <input type="text" [(ngModel)]="productoSeleccionado.imagen" placeholder="URL de imagen">
+  <div class="preview" *ngIf="productoSeleccionado.imagen">
+    <img [src]="productoSeleccionado.imagen" alt="Vista previa">
+  </div>
+  <button (click)="actualizarProducto()">Guardar Cambios</button>
+  <button (click)="cancelarEdicion()">Cancelar</button>
+</div>
