@@ -21,11 +21,16 @@ export class ProductoComponent implements OnInit {
     private router:Router
   ) { }
   async ngOnInit() {
-    this.productos = await lastValueFrom(this.productoService.obtenerProducto()).then((prods) => prods);
+    this.productos = await lastValueFrom(this.productoService.obtenerProductos()).then((prods) => prods);
   }
 
-  agregarAlCarrito(producto:any) {
+  agregarAlCarrito(producto: Producto) {
+  console.log('Cantidad disponible: ', producto.cantidad);
+  if (producto.cantidad > 0) {
     this.carritoService.agregarProducto(producto, 1);
+  } else {
+    alert('No puedes agregar más de la cantidad disponible en inventario.');
+  }
   }
 
   irAlCarrito() {

@@ -1,0 +1,25 @@
+<div class="contenedor-formulario">
+  <form class="formulario" (ngSubmit)="solicitarRecuperacion()">
+    <h2>Recuperar Contraseña</h2>
+    <p class="instrucciones">Ingresa tu correo electrónico para recibir un enlace de recuperación</p>
+    
+    <input
+      type="email"
+      name="correo"
+      placeholder="Correo electrónico"
+      [(ngModel)]="correo"
+      required
+    />
+    
+    <button type="submit" class="btn btn-primario" [disabled]="loading">
+      {{ loading ? 'Enviando...' : 'Enviar enlace de recuperación' }}
+    </button>
+    
+    <button type="button" class="btn btn-secundario" (click)="volver()">
+      Volver al login
+    </button>
+
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+    <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+  </form>
+</div> 

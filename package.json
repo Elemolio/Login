@@ -23,6 +23,7 @@
     "@angular/ssr": "^19.1.8",
     "@paypal/checkout-server-sdk": "^1.0.3",
     "axios": "^1.9.0",
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "mysql2": "^3.14.0",

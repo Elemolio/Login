@@ -1,0 +1,175 @@
+/* Reset básico */
+
+/* Centrado del contenedor principal */
+.contenedor-principal {
+  display: flex;
+  justify-content: center;  /* Centrado horizontal */
+  align-items: center;      /* Centrado vertical */
+  flex-direction: column;   /* Apilar el cartel y el formulario */
+  height: 100vh;            /* Ocupa toda la altura de la pantalla */
+  text-align: center;
+}
+
+/* Estilo del cartel */
+.cartel h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #FFD700; /* Color oro */
+  font-family: 'Arial', sans-serif; /* Tipografía Arial */
+  font-weight: bold; /* Hacer el texto más destacado */
+}
+
+/* Estilo del formulario */
+.contenedor-formulario {
+  width: 100%;
+  max-width: 400px; /* Máximo tamaño del formulario */
+  padding: 20px;
+  background-color: #f8f8f8; /* Fondo del formulario */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.formulario input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Botones */
+.btn-primario {
+  background-color: #4CAF50; /* Fondo verde */
+  color: white;
+}
+
+.btn-secundario {
+  background-color: #f1f1f1; /* Fondo gris claro */
+  color: #333;
+}
+
+.btn-recuperar {
+  background-color: #ff9800; /* Fondo naranja */
+  color: white;
+}
+
+/* Estilos para mensajes de error y éxito */
+.error, .success {
+  font-size: 14px;
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1b1b38;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-formulario {
+  border: 1px solid #555;
+  padding: 20px 30px;
+  border-radius: 6px;
+  width: 280px;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background-color: transparent;
+  border: 1px solid #7a5a1e;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #d8c2a0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input::placeholder {
+  color: #d8c2a0;
+  font-weight: 600;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #d48e17;
+}
+
+button.btn {
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.btn-primario {
+  background-color: #bb7f29;
+  color: #f3d8ab;
+}
+
+.btn-primario:hover {
+  background-color: #c18f34;
+}
+
+.btn-secundario {
+  background-color: #f3d8ab;
+  color: #2e2e2e;
+  margin-top: 6px;
+}
+
+.btn-secundario:hover {
+  background-color: #e6c98e;
+}
+
+.btn-recuperar {
+  background-color: transparent;
+  color: #bb7f29;
+  border: none;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btn-recuperar:hover {
+  color: #d48e17;
+}

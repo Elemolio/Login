@@ -1,0 +1,46 @@
+<div class="contenedor-principal">
+  <div class="cartel">
+    <h2>Únete a Skillfull Harmony Instruments</h2>
+  </div>
+  <div class="contenedor-formulario">
+    <form class="formulario" (ngSubmit)="onSubmit()">
+      <input
+        type="email"
+        name="correo"
+        placeholder="Correo"
+        [(ngModel)]="correo"
+        required
+      />
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="nombre"
+        required
+      />
+      <input
+        type="password"
+        name="contrasena"
+        placeholder="Contraseña"
+        [(ngModel)]="contrasena"
+        required
+      />
+      <input
+        type="password"
+        name="confirmarContrasena"
+        placeholder="Confirmar contraseña"
+        [(ngModel)]="confirmarContrasena"
+        required
+      />
+      <button type="submit" class="btn btn-primario" [disabled]="loading">
+        {{ loading ? 'Registrando...' : 'Crear Cuenta' }}
+      </button>
+      <button type="button" class="btn btn-secundario" (click)="irALogin()">
+        Iniciar Sesión
+      </button>
+
+      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+      <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    </form>
+  </div>
+</div>

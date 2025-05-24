@@ -1,0 +1,19 @@
+{
+  "name": "tienda-instrumentos-backend",
+  "version": "1.0.0",
+  "description": "Backend para la tienda de instrumentos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "cors": "^2.8.5",
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+} 

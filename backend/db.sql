@@ -10,6 +10,15 @@ CREATE TABLE IF NOT EXISTS instrumentos (
     imagen TEXT
 );
 
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    rol VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO instrumentos (id, nombre, descripcion, precio, cantidad, imagen) VALUES
 (1, 'Guitarra Electrica', 'Guitarra Electrica de buena calidad con cambio de cuerdas', 1500.00, 10, 'https://imgs.search.brave.com/2pkNVJ8sj-a3rk85Sh9foL0IqMFdcdDa7-VTp2jdrU8/rs:fit:860:0:0:0/g:ce/...'),
 (2, 'Tambor', 'Tambor especializado para baterias u orquetas', 1000.00, 5, 'https://imgs.search.brave.com/6Hi6W0hVqyiAqbK7di6A0z3_t0c7p23ozNIQzAmA9VU/rs:fit:860:0:0:0/g:ce/...'),

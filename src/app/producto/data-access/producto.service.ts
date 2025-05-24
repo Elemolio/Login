@@ -1,53 +1,19 @@
-import { inject, Injectable } from '@angular/core';
-import { Producto } from '../interfaces/producto';
-import { catchError, map, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Producto } from '../interfaces/producto';  // Asegúrate de que la interfaz esté importada
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
-  private xmlUrl = 'productos.xml';
-  private http = inject(HttpClient);
+  // Cambié la URL para que apunte a la API del backend que obtiene los productos de MySQL
+  private apiUrl = 'http://localhost:3000/api/instrumentos'; // URL de la API que devuelve los productos de la BD
 
-  obtenerProducto(): Observable<Producto[]>{
-    const productos = localStorage.getItem('productos');
+  constructor(private http: HttpClient) {}
 
-    if (productos) {
-      return new Observable<Producto[]>(observer => {
-        observer.next(this.parseXML(productos));
-        observer.complete();
-      });
-    } else {
-      return this.http.get(this.xmlUrl, { responseType: 'text' }).pipe(
-        map(xml => this.parseXML(xml)),
-        catchError(error => {
-          console.error('Error al cargar los productos:', error);
-          return [];
-        })
-      )
-    }
+  // Método para obtener los productos desde la base de datos (MySQL)
+  obtenerProductos(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.apiUrl);  // Realiza la solicitud HTTP para obtener los productos desde el backend
   }
-
-  private parseXML(xml: string): Producto[] {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xml, 'text/xml');
-    const productos: Producto[] = [];
-  
-    Array.from(xmlDoc.getElementsByTagName('producto')).forEach(prod => {
-      const id = parseInt(prod.getAttribute('id') || '0');
-      
-      productos.push({
-        id: id,
-        nombre: prod.getElementsByTagName('nombre')[0]?.textContent || '',
-        imagen: prod.getElementsByTagName('imagen')[0]?.textContent || '',
-        precio: parseInt(prod.getElementsByTagName('precio')[0]?.textContent || '0'),
-        descripcion: prod.getElementsByTagName('descripcion')[0]?.textContent || '',  
-        cantidad: parseInt(prod.getElementsByTagName('cantidad')[0]?.textContent || '0') // Cantidad
-      });
-    });
-  
-    return productos;
-  }
-  
 }

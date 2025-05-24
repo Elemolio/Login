@@ -1,0 +1,40 @@
+<!-- Formulario para cambiar la contraseña -->
+<div class="contenedor-principal">
+  <div class="cartel">
+    <h2>Cambiar Contraseña</h2>
+  </div>
+  <div class="contenedor-formulario">
+    <form class="formulario" (ngSubmit)="cambiarContrasena()">
+      <input
+        type="email"
+        name="correo"
+        placeholder="Correo"
+        [(ngModel)]="correo"
+        required
+      />
+      <input
+        type="password"
+        name="nuevaContrasena"
+        placeholder="Nueva contraseña"
+        [(ngModel)]="nuevaContrasena"
+        required
+      />
+      <input
+        type="password"
+        name="confirmarContrasena"
+        placeholder="Confirmar nueva contraseña"
+        [(ngModel)]="confirmarContrasena"
+        required
+      />
+      <button type="submit" class="btn btn-primario" [disabled]="loading">
+        {{ loading ? 'Cambiando...' : 'Cambiar contraseña' }}
+      </button>
+      <button type="button" class="btn btn-secundario" (click)="volver()">
+        Volver
+      </button>
+
+      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+      <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    </form>
+  </div>
+</div>

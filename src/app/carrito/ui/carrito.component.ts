@@ -44,7 +44,7 @@ export class CarritoComponent implements OnInit {
     } else {
       alert('No puedes agregar más de la cantidad disponible en inventario.');
     }
-  }
+}
 
   // Disminuir cantidad de producto en carrito
   disminuirCantidad(producto: Producto): void {
@@ -70,8 +70,17 @@ export class CarritoComponent implements OnInit {
     this.carritoService.generarXML();
   }
 
-  // Inicializar el botón de PayPal
-  // Inicializar el botón de PayPal
+  pagarCarrito(ordenId: string): boolean {
+  // Lógica de pago
+  // Si el pago fue exitoso:
+  this.carrito = [];  // Vaciar carrito
+  console.log('Carrito vaciado después del pago de la orden', ordenId);
+  
+  // Retornar true para indicar que el pago fue exitoso y se vació el carrito
+  return true;
+  }
+
+ // Inicializar el botón de PayPal
 inicializarBotonPayPal(): void {
   paypal.Buttons({
     // Crear la orden de pago
@@ -88,19 +97,35 @@ inicializarBotonPayPal(): void {
     onApprove: async (data: any, actions: any) => {  // Especificar el tipo 'any' para 'data' y 'actions'
       const orden = await actions.order.capture();
       console.log('Pago exitoso', orden);
+    // Verificar si el carrito tiene productos
+    if (this.carrito.length > 0) {
+    // Generar el XML antes de vaciar el carrito
+    this.carritoService.generarXML();  // Aquí se genera el XML
 
-      // Vaciar el carrito y generar el XML después de la compra
-      this.carritoService.pagarCarrito(orden.id);
-      
-      // Actualizar el carrito en el componente para reflejar el vaciado
-      this.carrito = this.carritoService.obtenerCarrito();  // Actualizamos el carrito
+    // Vaciar el carrito con el pago
+    this.carritoService.pagarCarrito(orden.id);
 
+    // Actualizar el carrito en el componente para reflejar el vaciado
+    this.carrito = this.carritoService.obtenerCarrito();  // Actualizamos el carrito
+
+    // Redirigir al usuario a una página de "pago completado"
+    this.router.navigate(['/pago-completado']);
+  } else {
+    console.log("El carrito está vacío.");
+  }
     }
   }).render('#paypal-button-container'); // Renderiza el botón de PayPal en el contenedor
 }
 
   // Calcula el total del carrito
-  obtenerTotalCarrito(): number {
-    return this.carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
-  }
+obtenerTotalCarrito(): number {
+  return this.carrito.reduce((total, producto) => {
+    // Verificamos que la cantidad sea mayor que 0 antes de multiplicar
+    if (producto.cantidad > 0) {
+      return total + (producto.precio * producto.cantidad);
+    }
+    return total;
+  }, 0);
+}
+
 }

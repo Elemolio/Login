@@ -1,0 +1,90 @@
+.contenedor-formulario {
+  border: 1px solid #555;
+  padding: 20px 30px;
+  border-radius: 6px;
+  width: 280px;
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h2 {
+  color: #d8c2a0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.instrucciones {
+  color: #d8c2a0;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input[type="email"] {
+  background-color: transparent;
+  border: 1px solid #7a5a1e;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #d8c2a0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input::placeholder {
+  color: #d8c2a0;
+  font-weight: 600;
+}
+
+input[type="email"]:focus {
+  border-color: #d48e17;
+}
+
+button.btn {
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.btn-primario {
+  background-color: #bb7f29;
+  color: #f3d8ab;
+}
+
+.btn-primario:hover {
+  background-color: #c18f34;
+}
+
+.btn-secundario {
+  background-color: #f3d8ab;
+  color: #2e2e2e;
+  margin-top: 6px;
+}
+
+.btn-secundario:hover {
+  background-color: #e6c98e;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.success {
+  color: #51cf66;
+  font-size: 0.9rem;
+  text-align: center;
+} 
