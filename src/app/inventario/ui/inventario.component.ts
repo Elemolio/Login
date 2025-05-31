@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { InventarioService } from '../data-access/inventario.service';
 import { Producto } from '../../producto/interfaces/producto';
 import { Router } from '@angular/router';
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './inventario.component.html',
   styleUrls: ['./inventario.component.css']
 })
@@ -94,5 +95,13 @@ export class InventarioComponent implements OnInit {
         && producto.precio > 0 
         && String(producto.descripcion).trim() !== '';  // Convertir a string antes de trim()
 }
+
+ descargarInventario(): void {
+    alert('Función descargar inventario aún no implementada.');
+  }
+
+  verPedidos(): void {
+    alert('Función ver pedidos aún no implementada.');
+  }
 
 }

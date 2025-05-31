@@ -1,5 +1,22 @@
 <h2>Gestión de Inventario</h2>
-<button (click)="irAProductos()">Volver a Productos</button>
+
+<!-- Botones verticales a la izquierda -->
+<div class="botones-verticales">
+  <button (click)="irAProductos()">Volver a Productos</button>
+  <button (click)="descargarInventario()">Descargar Inventario</button>
+  <button (click)="verPedidos()">Ver Pedidos</button>
+</div>
+
+<!-- Formulario para agregar productos -->
+<div class="form">
+  <h3>Agregar Nuevo Producto</h3>
+  <input type="text" [(ngModel)]="nuevoProducto.nombre" placeholder="Nombre del producto">
+  <input type="number" [(ngModel)]="nuevoProducto.precio" placeholder="Precio">
+  <input type="text" [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripción">
+  <input type="number" [(ngModel)]="nuevoProducto.cantidad" placeholder="Cantidad">
+  <input type="text" [(ngModel)]="nuevoProducto.imagen" placeholder="URL de imagen">
+  <button (click)="agregarProducto()">Agregar Producto</button>
+</div>
 
 <!-- Lista de productos en inventario -->
 <div class="productos">
@@ -14,18 +31,7 @@
   </div>
 </div>
 
-<!-- Formulario para agregar productos (abajo de la lista) -->
-<div class="form">
-  <h3>Agregar Nuevo Producto</h3>
-  <input type="text" [(ngModel)]="nuevoProducto.nombre" placeholder="Nombre del producto">
-  <input type="number" [(ngModel)]="nuevoProducto.precio" placeholder="Precio">
-  <input type="text" [(ngModel)]="nuevoProducto.descripcion" placeholder="Descripción">
-  <input type="number" [(ngModel)]="nuevoProducto.cantidad" placeholder="Cantidad">
-  <input type="text" [(ngModel)]="nuevoProducto.imagen" placeholder="URL de imagen">
-  <button (click)="agregarProducto()">Agregar Producto</button>
-</div>
-
-<!-- Formulario de edición (opcional si está activo) -->
+<!-- Formulario de edición (opcional) -->
 <div *ngIf="modoEdicion && productoSeleccionado" class="form">
   <h3>Editar Producto</h3>
   <input type="text" [(ngModel)]="productoSeleccionado.nombre" placeholder="Nombre del producto">
